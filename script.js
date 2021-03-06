@@ -150,11 +150,14 @@ buttonLessArray.forEach((el,index) => {
 
 
 var delButton = document.querySelectorAll(".delButton") ;
-var delButtonArray = Array.prototype.slice.call(delButton); 
+var delButtonArray = Array.prototype.slice.call(delButton) ; 
+var firstContain = document.querySelector(".container-first") ;
+
 delButtonArray.forEach((el,index) => {
     el.addEventListener("click" , () => {
         if(index == 1){
-
+            console.log("hello world");
+            console.log(firstContain.style.height);
         }
     })
 });
