@@ -161,7 +161,6 @@ secondContain = "380"
 var firstProduct = document.querySelector(".container-first") ;
 var secondProduct = document.querySelector(".container-second") ;
 var productNumber = document.querySelectorAll('.product') ;
-console.log(productNumber);
 var length = 0 ;
 var producntNumberArray = Array.prototype.slice.call(productNumber) ; 
 var num = document.querySelector(".small-badge"); 
