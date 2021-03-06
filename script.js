@@ -16,6 +16,7 @@
 
 //     });
 
+
 //     $(".delButton").click(function (e) {
 //         console.log(e.target.nodeName);
 //         var target = $(e.target).parent().parent().parent().parent().parent() ;
@@ -64,21 +65,44 @@ inputAarray.forEach((el,index) => {
     }   
 });
 
+var set,set2 ; 
 buttonArray.forEach((el,index) => {
-    el.addEventListener("click", () => {
+    el.addEventListener("click", ()=>{
         if (index == 0){
-            sum1++ ;
-            value.value = sum1 ;
-        }
-        if(index == 1 ){
-            sum2++ ;
-            value1.value = sum2 ;
-        }
-        if(index == 2){
-            sum3++ ;
-            value2.value = sum3 ;
-        }
+                sum1++ ;
+                value.value = sum1 ;
+            }
+            if(index == 1 ){
+                sum2++ ;
+                value1.value = sum2 ;
+            }
+            if(index == 2){
+                sum3++ ;
+                value2.value = sum3 ;
+            }
+    })
+    el.addEventListener("mousedown", () => {
+        set = setInterval(function addPerSecond(){
+            if (index == 0){
+                sum1++ ;
+                value.value = sum1 ;
+            }
+            if(index == 1 ){
+                sum2++ ;
+                value1.value = sum2 ;
+            }
+            if(index == 2){
+                sum3++ ;
+                value2.value = sum3 ;
+            }
+        },100)
 
+        
+
+    })
+
+    el.addEventListener("mouseup", ()=>{
+        clearInterval(set) ;
     })
 });
 
@@ -100,5 +124,37 @@ buttonLessArray.forEach((el,index) => {
             }
         }
 
+    })
+
+    el.addEventListener("mousedown", ()=>{
+        set2 = setInterval(function addPerSecond(){
+            if (index == 0){
+                if(sum1  > 1){sum1-- ;
+                value.value = sum1 ;}
+            }
+            if(index == 1 ){
+                if(sum2  > 1){sum2-- ;
+                value1.value = sum2 ;}
+            }
+            if(index == 2){
+                if(sum3  > 1){sum3-- ;
+                value2.value = sum3 ;}
+            }
+        },100)
+    })
+
+    el.addEventListener("mouseup", ()=>{
+        clearInterval(set2) ;
+    })
+});
+
+
+var delButton = document.querySelectorAll(".delButton") ;
+var delButtonArray = Array.prototype.slice.call(delButton); 
+delButtonArray.forEach((el,index) => {
+    el.addEventListener("click" , () => {
+        if(index == 1){
+
+        }
     })
 });
