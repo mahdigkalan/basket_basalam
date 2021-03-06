@@ -1,6 +1,0 @@
-add button  ---------> solved 
-less button -------> solved :)
-delete button -----> solved :)
-responsive page -----> solved :)
-responsive for 320 px -----> solved :)
-basket product number ------> solved :)))
