@@ -37,8 +37,68 @@
 
 // });
 
+var button = document.querySelectorAll(".add-button") ;
+var buttonLess = document.querySelectorAll(".less-button") ;
+var input = document.querySelectorAll(".inp") ;
+var value = document.querySelector("#inp1") ;
+var value1 = document.querySelector("#inp2") ;
+var value2 = document.querySelector("#inp3") ;
+var val = 0 ;
+var sum1,sum2,sum3 ;
 
-document.querySelectorAll(".add-button").addEventListener("click",function(){
-    console.log(tis);
-})
+var buttonArray = Array.prototype.slice.call(button);
+var buttonLessArray = Array.prototype.slice.call(buttonLess);
+var inputAarray = Array.prototype.slice.call(input);
 
+
+inputAarray.forEach((el,index) => {
+    val = el.value ;
+    if(index == 0){
+        sum1 = val ;
+    }
+    if(index == 1 ){
+        sum2 = val ;
+    }
+    if(index == 2){
+        sum3 = val ;
+    }   
+});
+
+buttonArray.forEach((el,index) => {
+    el.addEventListener("click", () => {
+        if (index == 0){
+            sum1++ ;
+            value.value = sum1 ;
+        }
+        if(index == 1 ){
+            sum2++ ;
+            value1.value = sum2 ;
+        }
+        if(index == 2){
+            sum3++ ;
+            value2.value = sum3 ;
+        }
+
+    })
+});
+
+buttonLessArray.forEach((el,index) => {
+    el.addEventListener("click", () => {
+        if (index == 0){
+            if(sum1  > 1){sum1-- ;
+                value.value = sum1 ;
+            }
+        }
+        if(index == 1 ){
+            if(sum2  > 1){sum2-- ;
+                value1.value = sum2 ;
+            }
+        }
+        if(index == 2){
+            if(sum3  > 1){sum3-- ;
+                value2.value = sum3 ;
+            }
+        }
+
+    })
+});
