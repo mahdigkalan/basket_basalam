@@ -1,0 +1,460 @@
+@font-face {
+    font-family: 'IRANSansWeb';
+    src: url('IRANSans 5 WebFonts/fonts/eot/IRANSansWeb.eot') format('eot');
+    src: url('IRANSans 5 WebFonts/fonts/ttf/IRANSansWeb.ttf') format('ttf');
+    src: url('IRANSans 5 WebFonts/fonts/woff/IRANSansWeb.woff') format('woff');
+    src: url('IRANSans 5 WebFonts/fonts/woff2/IRANSansWeb.woff2') format('woff2');
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: IRANSansWeb;
+    display: flex;
+    justify-content: center;
+}
+.flex_row{
+    display: flex;
+    flex-direction: row;
+}
+.flex_row_reverse{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.flex_column{
+    display: flex;
+    flex-direction: column;
+}
+button{
+    font-family: IRANSansWeb;
+    font-size: 12px;
+    font-weight: 400;
+}
+input{
+    font-family: IRANSansWeb;
+}
+.main-container{
+    width: 360px;
+    height: 101px;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+.basketItem{
+    width: 180px;
+    height: 50px;
+    position: relative;
+}
+#basketItemImg2{
+    width: 16px;
+    height: 20px;
+    margin: 14px 8px 0px 22px;
+}
+.sellingButton > button {
+    width: 103px;
+    height: 32px;
+    background:#3E3E3E;
+    border-radius: 50px;
+    color: white;
+}
+.sellingButton{
+    padding: 10px 0 0 0;
+}
+.logoItem{
+    width: 180px;
+    height: 50px;
+    direction: rtl;
+    padding: 15px 20px 0 0 ;
+}
+.searchbox{
+    width: 360px;
+    height: 51px;
+}
+#basketItemImg1{
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+#image3{
+    padding: 5px;
+} 
+.searchbox input{
+    width: 328px;
+    height: 40px;
+    border-radius: 100px;
+    border: 1px solid #9D9D9D;
+    box-sizing: border-box;
+    direction: rtl;
+    padding: 0 10px 0 0;
+    background-image: url('image/searchVector.png');
+    background-position: 10px 8px; 
+    background-repeat: no-repeat;
+    font-size: 12px;
+    font-weight: 400;
+}
+.searchbox{
+    text-align: center;
+}
+.main-content{
+    box-sizing: border-box;
+    width: 360px;
+    height: 625px;
+    border-bottom: solid 5px red;
+}
+.container-first{
+    height: 600px;
+    width: 100%;
+    border-bottom: solid 5px rgba(238, 238, 238, 1) ;
+}
+.container-second{
+    width: 100%;
+    height: 380px;
+}
+.container-third{
+    width: 100%;
+    height: 90px;
+}
+.container-header{
+    width: 100%;
+    height: 40px;
+}
+.selectList{
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    font-weight: 700;
+}
+.selectedList{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    padding: 10px;
+    border-bottom: solid #DF3856 2px ;
+    color: rgba(223, 56, 86, 1);
+}
+.nextList{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    padding: 10px;
+    border-bottom: solid #DFDFDF 2px;
+}
+.shop-title{
+    width: 100%;
+    height: 100px;
+}
+.boothName{
+    width: 100%;
+    height: 40px;
+    direction: rtl;
+}
+.boothName > p{
+    font-size: 14px;
+    font-weight: 400;
+}
+.boothName > span {
+    font-size: 14px;
+    font-weight: 700;
+}
+.boothFounder{
+    width: 100%;
+    height: 60px;
+    direction: rtl;
+}
+.whereFrom{
+    padding: 20px 10px 0 0;
+}
+.whereFrom > span{
+    font-weight: 700;
+}
+.boothPicture{
+    width: 20%;
+    height: 100%;
+}
+.boothPicture > img{
+    padding: 8px 15px 0 0 ;
+}
+.boothLocation{
+    width: 80%;
+    height: 100%;
+}
+.boothLocationFirstDiv{
+    width: 100%;
+    height: 50%;
+    direction: rtl;
+}
+.boothLocationSecondDiv{
+    width: 100%;
+    height: 50%;
+    direction: rtl;
+}
+.boothLocationFirstDiv > p{
+    padding: 10px 0 0 0;
+    font-size: 12px;
+    font-weight: 400;
+}
+.boothLocationSecondDiv > p{
+    font-size: 12px;
+    font-weight: 400;
+}
+.produnt-list{
+    height: calc(100% - 140px );
+    width: 100%;
+}
+.product{
+    width: 100%;
+    height: 180px;
+    border-bottom: solid rgba(238, 238, 238, 1) 2px;
+}
+.main-product{
+    width: 100%;
+    height: 70%;
+}
+.product-picture{
+    width: 30%;
+    height: 100%;
+}
+.product-picture > img{
+    padding: 20px 10px;
+}
+.product-cost{
+    width: 70%;
+    height: 100%;
+}
+.product-name{
+    direction: rtl;
+    width: 100%;
+    height: 50%;
+}
+.product-name > P{
+    padding: 22px 5px 0 0;
+    font-size: 12px;
+    font-weight: 400;
+}
+.productFinal-cost{
+    height: 100%;
+}
+.line-cost{
+    width: 70%;
+    height: 100%;
+    padding: 40px 0 0 5px;
+}
+.final-cost > p{
+    padding: 40px 0 0 0;
+}
+.else-product{
+    justify-content: flex-start;
+}
+.saveInNext{
+    width: 60%;
+}
+.saveInNext > div {
+    width: 90px;
+    border-bottom: dotted #7d7d7d 2px;
+    margin: 10px 20px 0 10px;
+    color: #7D7D7D;
+    font-size: 10px;
+    font-weight: 700;
+}
+.orderCount{
+    width: 40%;
+}
+.ordersButtons{
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    border: none;
+    background: #eeeeee;
+}
+.orderCount{
+    justify-content: flex-end;
+    padding: 12px;
+}
+.delButton{
+    margin: 0 12px 0 5px;
+    background-image: url("image/delVector.png");
+    background-position: 5px 4px; 
+    background-repeat: no-repeat;
+}
+.orderCount > input{
+    margin: 0 0 0 5px;
+    height: 23.362829208374023px;
+    width: 25.785627365112305px;
+    border-radius: 6px;
+    text-align: center;
+    margin: 0 2.5px 0 2.5px;
+}
+.product-footer{
+    width: 100%;
+    height: 120px;
+}
+.firstProductFooter{
+    height: 30%;
+    width: 100%;
+    justify-content: center;
+}
+.freeSend{
+    margin: 10px 0 0 0;
+    background: rgba(223, 245, 241, 1);
+    height: 28px;
+    width: 328.5047912597656px;
+    border-radius: 2px;
+    justify-content: flex-end;
+    padding: 5px;
+    color: rgba(0, 120, 108, 1);
+    font-size: 12px;
+    font-weight: 700;
+}
+.secondProductFooter{
+    height: 30%;
+    width: 100%;
+}
+.saleCode{
+    height: 24px;
+    width: 125px;
+    border-radius: 100px;
+    background: rgba(238, 238, 238, 1);
+    margin: 10px;
+}
+.saleCode > p{
+    font-size: 15px;
+    margin: 4px 0 0 10px;
+    color:rgba(62, 62, 62, 1);
+    font-size: 10px;
+    font-weight: 700;
+}
+.saleCode > img{
+    height: 10.5px;
+    width: 15px;
+    margin: 5px 5px 0 10px;
+    border-radius: 0px;
+}
+.finalCost{
+    width: 50%;
+    height: 100%;
+}
+.conShop{
+    width: 50%;
+    height: 100%;
+}
+.mainButton{
+    height: 32px;
+    width: 172px;
+    border-radius: 100px;
+    background: rgba(223, 56, 86, 1);
+    border: none;
+    color: rgba(250, 250, 250, 1);
+}
+.constSen{
+    padding: 0 0 0 10px;
+    color: rgba(83, 83, 83, 1);
+    font-size: 12px;
+    font-weight: 400;
+}
+.factor{
+    padding: 0 0 0 10px;
+}
+.second-productList{
+    width: 100%;
+    height: 380px;
+    border-bottom: solid 5px rgba(238, 238, 238, 1);
+}
+#thirdTwo{
+    margin: 10px 0 0 0;
+}
+.finalBuyBtn{
+    width: 100%;
+    height: 70px;
+}
+#secondFinalCost{
+    margin: 25px 0 0 0;
+}
+.buyBtn > button{
+    height: 48px;
+    width: 180px;
+    border-radius: 100px;
+    border: none;
+    background: rgba(223, 56, 86, 1);
+    margin: 20px 10px 0 0;
+    font-size: 16px;
+    color: rgba(250, 250, 250, 1);
+    font-size: 16px;
+    font-weight: 700;
+}
+del{
+    color: #00786C;
+}
+.orderCount > input{
+    border:solid 1px #eeeeee;
+}
+input,button{
+    outline: none;
+}
+button{
+    cursor: pointer;
+}
+.selectList{
+    cursor: pointer;
+}
+.saveInNext > div{
+    cursor: pointer;
+}
+.saleCode{
+    cursor: pointer;
+}
+@media screen and (max-width: 320px) {
+    .allProject{
+        width: 320px;
+    }
+    .main-container{
+        width: 320px;
+    }
+    .basketItem{
+        width: 160px;
+    }
+    .logoItem{
+        width: 160px;
+    }
+    .searchbox{
+        width: 320px;
+    }
+    .searchbox > input{
+        width: 300px;
+    }
+    .main-content{
+        width: 320px;
+    }
+    .freeSend{
+        width: 300px;
+    }
+    .conShop{
+        margin-left: -15px;
+    }
+    .buyBtn > button{
+        margin-right: 0px;
+    }
+    html{
+        margin-right: -6px;
+    }
+    .orderCount{
+        width: 50%;
+    } 
+}
+.small-badge{
+    width: 18px;
+    height: 18px;
+    background: rgba(223, 56, 86, 1);
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    color: rgba(255, 255, 255, 1);
+    font-size: 12px;
+    font-weight: 700;
+    padding-top: 1px;
+    text-align: center;
+}

@@ -1,0 +1,290 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="BasketStyleCss.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="allProject">
+
+        <div class="header">
+            <div class="main-container flex_row">
+                <div class="basketItem flex_row">
+                    <!-- <img src="image/Small.png" alt="NumText" id="basketItemImg1"> -->
+                    <div class="small-badge">3</div>
+                    <img src="image/Vector.png" alt="basketLogo" id="basketItemImg2">
+                    <div class="sellingButton">
+                        <button>فروش در باسلام</button>
+                    </div>
+                </div>
+                <div class="logoItem">
+                    <img src="image/Logo.png" alt="Logo" id="image1">
+                    <img src="image/Type.png" alt="NameLogo" id="image2">
+                    <img src="image/downVector.png" id="image3">
+                   
+                </div>
+                <div class="searchbox">
+                    <input type="search" placeholder="جستجو در صدها هزار محصول خانگی و محلی ...">
+                </div>
+            </div>
+        </div>
+
+        <div class="container-header">
+
+            <div class="selectList flex_row_reverse">
+                <div class="selectedList">سبد خرید</div>
+                <div class="nextList">لیست خرید بعدی</div>
+            </div>
+
+        </div>
+
+        <div class="container-first">
+
+
+            
+
+                <div class="shop-title flex_column">
+                    <div class="boothName">
+                        <p class="whereFrom">از غرفه : <span>خوشمزه های خاتون</span></p>
+                    </div>
+                    <div class="boothFounder flex_row">
+                        <div class="boothPicture">
+                            <img src="image/Ellipse 4.png" alt="">
+                        </div>
+                        <div class="boothLocation flex_column">
+                            <div class="boothLocationFirstDiv">
+                                <p>مینو همگام</p>
+                            </div>
+                            <div class="boothLocationSecondDiv">
+        
+                                <p><img src="image/VectorThree.png" alt="LocationVector">&nbspاز سعادت شهر</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="produnt-list">
+                    <div class="product flex_column" id="product1">
+                        <div class="main-product flex_row_reverse">
+                            <div class="product-picture">
+                                <img src="image/image 1.png" alt="">
+                            </div>
+                            <div class="product-cost flex_column">
+                                <div class="product-name">
+                                    <p>سوسیس آلمانی پنیری</p>
+                                </div>
+                                <div class="productFinal-cost flex_row_reverse">
+                                    <div class="line-cost">
+                                        <del>85,000</del>
+                                    </div>
+                                    <div class="final-cost">
+                                        <p>75,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="else-product flex_row">
+                            <div class="saveInNext">
+                                <div>
+                                    ذخیره در لیست بعدی
+                                </div>
+                            </div>
+                            <div class="orderCount flex_row">
+                                <button class="delButton ordersButtons"></button>
+                                <button class="add-button ordersButtons">
+                                    <img src="image/addVector.png">
+                                </button>
+                                <input type="text" value="3" min="1" readonly>
+                                <button class="less-button ordersButtons">
+                                    <img src="image/lowVector.png">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product flex_column" id="product2">
+                        <div class="main-product flex_row_reverse">
+                            <div class="product-picture">
+                                <img src="image/image 2.png" alt="">
+                            </div>
+                            <div class="product-cost flex_column">
+                                <div class="product-name">
+                                    <p>کالباس پسته</p>
+                                </div>
+                                <div class="productFinal-cost flex_row_reverse">
+                                    <div class="line-cost">
+                                        <del>35,000</del>
+                                    </div>
+                                    <div class="final-cost">
+                                        <p>15,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="else-product flex_row">
+                            <div class="saveInNext">
+                                <div>
+                                    ذخیره در لیست بعدی
+                                </div>
+                            </div>
+                            <div class="orderCount flex_row">
+                                <button class="delButton ordersButtons"></button>
+                                <button class="add-button ordersButtons">
+                                    <img src="image/addVector.png">
+                                </button>
+                                <input type="text" value="1" min="1" readonly>
+                                <button class="less-button ordersButtons">
+                                    <img src="image/lowVector.png">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-footer flex_column">
+                        <div class="firstProductFooter flex_row">
+                            <div class="freeSend flex_row">
+                                <b>.رایگان شد </b> &nbspهورا! ارسال از این غرفه برای شما
+                            </div>
+                        </div>
+                        <div class="secondProductFooter flex_row">
+                            <div class="saleCode flex_row">
+                                <p>ثبت کد تخفیف غرفه</p><img src="image/codeVector.png" alt="">
+                            </div>
+                        </div>
+                        <div class="thirdProductFooter flex_row">
+                            <div class="finalCost flex_column">
+                                <div class="constSen">جمع مبلغ برای این 2 کالا</div>
+                                <div class="factor">75,000</div>
+                            </div>
+                            <div class="conShop">
+                                <button class="mainButton">ادامه خرید فقط از این غرفه</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+        
+        
+        
+            
+
+
+        </div>
+
+        
+
+
+
+        <div class="container-second">
+
+
+            <div class="second-productList">
+                <div class="shop-title">
+                    <div class="boothName">
+                        <p class="whereFrom">از غرفه : <span>محصولات غذایی ولیک</span></p>
+                    </div>
+                    <div class="boothFounder flex_row">
+                        <div class="boothPicture">
+                            <img src="image/Ellipse 5.png" alt="">
+                        </div>
+                        <div class="boothLocation">
+                            <div class="boothLocationFirstDiv">
+                                <p>سارا خوش دل</p>
+                            </div>
+                            <div class="boothLocationSecondDiv">
+            
+                                <p><img src="image/VectorThree.png" alt="LocationVector">&nbspاز بوشهر </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="product" id="product1">
+                    <div class="main-product flex_row_reverse">
+                        <div class="product-picture">
+                            <img src="image/image 1.png" alt="">
+                        </div>
+                        <div class="product-cost flex_column">
+                            <div class="product-name">
+                                <p>سوسیس آلمانی پنیری</p>
+                            </div>
+                            <div class="productFinal-cost flex_row_reverse">
+                                <div class="line-cost">
+                                    <del>85,000</del>
+                                </div>
+                                <div class="final-cost">
+                                    <p>75,000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="else-product flex_row">
+                        <div class="saveInNext">
+                            <div>
+                                ذخیره در لیست بعدی
+                            </div>
+                        </div>
+                        <div class="orderCount flex_row">
+                            <button class="delButton ordersButtons">
+                                <!-- <img src="image/delVector.png" alt=""> -->
+                            </button>
+                            <button class="add-button ordersButtons">
+                                <img src="image/addVector.png">
+                            </button>
+                            <input type="text" value="3" min="1" readonly>
+                            <button class="less-button ordersButtons">
+                                <img src="image/lowVector.png">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="product-footer flex_column">
+                    <div class="firstProductFooter flex_row">
+                        <div class="freeSend flex_row">
+                        .تومان دیگر از این غرفه خرید کنید&nbsp<span>45000</span>&nbsp:برای ارسال رایگان
+                        </div>
+                    </div>
+                    <div class="thirdProductFooter flex_row" id="thirdTwo">
+                        <div class="finalCost flex_column">
+                            <div class="constSen">جمع مبلغ برای این 2 کالا</div>
+                            <div class="factor">75,000</div>
+                        </div>
+                        <div class="conShop">
+                            <button class="mainButton">ادامه خرید فقط از این غرفه</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+        <div class="container-third">
+
+
+
+            <div class="finalBuyBtn flex_row">
+                <div class="finalCost" id="secondFinalCost">
+                    <div class="constSen">مبلغ قابل پرداخت 2 غرفه</div>
+                    <div class="factor">75,000</div>
+                </div>
+                <div class="buyBtn">
+                    <button>ادامه خرید از 2 غرفه</button>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
