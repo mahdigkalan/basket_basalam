@@ -151,13 +151,81 @@ buttonLessArray.forEach((el,index) => {
 
 var delButton = document.querySelectorAll(".delButton") ;
 var delButtonArray = Array.prototype.slice.call(delButton) ; 
-var firstContain = document.querySelector(".container-first") ;
+var productOne = document.querySelector("#product1") ;
+var productTwo = document.querySelector("#product2") ;
+var productThree = document.querySelector("#product3") ;
+var firstContain = document.querySelector(".container-first").style.height ;
+firstContain = "600"
+var secondContain = document.querySelector(".container-second").style.height ;
+secondContain = "380" 
+var firstProduct = document.querySelector(".container-first") ;
+var secondProduct = document.querySelector(".container-second") ;
+var productNumber = document.querySelectorAll('.product') ;
+console.log(productNumber);
+var length = 0 ;
+var producntNumberArray = Array.prototype.slice.call(productNumber) ; 
+var num = document.querySelector(".small-badge"); 
+
+producntNumberArray.forEach(el => {
+    var dis = el.style.display ;
+    if(dis !== "none"){
+        length++ ;
+    }
+});
+
+function showNumber(){
+    num.innerHTML = length ;
+}
+
 
 delButtonArray.forEach((el,index) => {
     el.addEventListener("click" , () => {
+        if(index == 0){
+            length-- ;
+            showNumber() ;
+            firstContain = parseInt(firstContain-180) ;
+            productOne.style.display = "none" ;
+
+            if(firstContain == 240){
+
+                firstProduct.style.display = "none" ;
+                document.querySelector(".container-first").style.height = firstContain ;
+
+            }else{
+                document.querySelector(".container-first").style.height = firstContain ;
+            }
+        }
+
         if(index == 1){
-            console.log("hello world");
-            console.log(firstContain.style.height);
+            length-- ;
+            showNumber() ;
+            firstContain = parseInt(firstContain-180) ;
+            productTwo.style.display = "none" ;
+
+            if(firstContain == 240){
+
+                firstProduct.style.display = "none" ;
+                document.querySelector(".container-first").style.height = firstContain ;
+
+            }else{
+                document.querySelector(".container-first").style.height = firstContain ;
+            }
+        }
+
+        if(index == 2){
+            length-- ;
+            showNumber();
+            secondContain = parseInt(secondContain-180) ;
+            productThree.style.display = "none" ;
+
+            if(secondContain == 200){
+
+                secondProduct.style.display = "none" ;
+                document.querySelector(".container-second").style.height = secondContain ;
+
+            }else{
+                document.querySelector(".container-second").style.height = secondContain ;
+            }
         }
     })
 });
