@@ -38,14 +38,27 @@
 
 // });
 
+
 var button = document.querySelectorAll(".add-button") ;
 var buttonLess = document.querySelectorAll(".less-button") ;
 var input = document.querySelectorAll(".inp") ;
-var value = document.querySelector("#inp1") ;
-var value1 = document.querySelector("#inp2") ;
-var value2 = document.querySelector("#inp3") ;
+var value,value1,value2 ;
 var val = 0 ;
 var sum1,sum2,sum3 ;
+
+var inpArr = [] ;
+inputArray = Array.prototype.slice.call(input); 
+inputArray.forEach((el,index) => {
+    for (var i = index ; i <= index ; i++){
+        inpArr.push(el) ; 
+    }
+});
+
+console.log(inpArr);
+value = inpArr[0] ;
+value1 = inpArr[1] ;
+value2 = inpArr[2] ;
+
 
 var buttonArray = Array.prototype.slice.call(button);
 var buttonLessArray = Array.prototype.slice.call(buttonLess);
