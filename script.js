@@ -54,7 +54,6 @@ inputArray.forEach((el,index) => {
     }
 });
 
-console.log(inpArr);
 value = inpArr[0] ;
 value1 = inpArr[1] ;
 value2 = inpArr[2] ;
@@ -78,20 +77,58 @@ inputAarray.forEach((el,index) => {
     }   
 });
 
+var finalcost = document.querySelectorAll(".final-cost") ;
+var finalcostArray = Array.prototype.slice.call(finalcost); 
+var costArr = [] ;
+finalcostArray.forEach(el => {
+    costArr.push(el) ;
+});
+
+var costs = [225000,15000,225000]
+function findCost(num,count){
+    var constC = parseInt(costArr[num].firstElementChild.innerHTML) ;
+    var final = constC * count ;
+    
+    if(num == 0){
+        costs.splice(0,1,final)
+    }
+    if(num == 1){
+        costs.splice(1,1,final)
+    }
+    if(num == 2){
+        costs.splice(2,1,final)
+    }
+
+    var factorOne = document.getElementsByClassName("factor")[0].innerHTML ;
+    factorOne = costs[0]+costs[1] ;
+    document.getElementsByClassName("factor")[0].innerHTML = factorOne ;
+
+    var factorTwo = document.getElementsByClassName("factor")[1].innerHTML ;
+    factorTwo = costs[2] ;
+    document.getElementsByClassName("factor")[1].innerHTML = factorTwo ;
+
+    var factorThree = document.getElementsByClassName("factor")[2].innerHTML ;
+    factorThree = factorOne + factorTwo ;
+    document.getElementsByClassName("factor")[2].innerHTML = factorThree ;
+}
+
 var set,set2 ; 
 buttonArray.forEach((el,index) => {
     el.addEventListener("click", ()=>{
         if (index == 0){
                 sum1++ ;
                 value.value = sum1 ;
+                findCost(0,sum1) ;
             }
             if(index == 1 ){
                 sum2++ ;
                 value1.value = sum2 ;
+                findCost(1,sum2) ;
             }
             if(index == 2){
                 sum3++ ;
                 value2.value = sum3 ;
+                findCost(2,sum3) ;
             }
     })
     el.addEventListener("mousedown", () => {
@@ -230,6 +267,7 @@ delButtonArray.forEach((el,index) => {
             secondContain = parseInt(secondContain-180) ;
             productThree.style.display = "none" ;
 
+            
             if(secondContain == 200){
 
                 secondProduct.style.display = "none" ;
@@ -241,3 +279,5 @@ delButtonArray.forEach((el,index) => {
         }
     })
 });
+
+
