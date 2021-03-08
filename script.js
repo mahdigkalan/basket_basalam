@@ -161,16 +161,19 @@ buttonLessArray.forEach((el,index) => {
         if (index == 0){
             if(sum1  > 1){sum1-- ;
                 value.value = sum1 ;
+                findCost(0,sum1);
             }
         }
         if(index == 1 ){
             if(sum2  > 1){sum2-- ;
                 value1.value = sum2 ;
+                findCost(1,sum2) ;
             }
         }
         if(index == 2){
             if(sum3  > 1){sum3-- ;
                 value2.value = sum3 ;
+                findCost(2,sum3) ;
             }
         }
 
