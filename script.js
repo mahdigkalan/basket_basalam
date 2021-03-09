@@ -84,7 +84,7 @@ finalcostArray.forEach(el => {
     costArr.push(el) ;
 });
 
-var costs = [225000,15000,225000]
+var costs = [225000,15000,225000] ;
 function findCost(num,count){
     var constC = parseInt(costArr[num].firstElementChild.innerHTML) ;
     var final = constC * count ;
@@ -229,10 +229,41 @@ function showNumber(){
     num.innerHTML = length ;
 }
 
+var input = document.getElementsByClassName("inp") ;
+var cost = document.getElementsByClassName("final-cost") ;
+
+function editCost(inpIndex,costIndex){
+    var inputVal = input[inpIndex].value ;
+    var costVal = cost[costIndex].firstElementChild.innerHTML ;
+    var finalLessCost = inputVal * costVal ;
+    if(inpIndex <= 1){
+    var factorOne = document.getElementsByClassName("factor")[0].innerHTML ;
+    var factorTwo = document.getElementsByClassName("factor")[1].innerHTML ;
+    document.getElementsByClassName("factor")[0].innerHTML = factorOne - finalLessCost ;
+    factorOne = document.getElementsByClassName("factor")[0].innerHTML ;
+    factorOne = parseInt(factorOne) ;
+    factorTwo = parseInt(factorTwo) ;
+    var display = document.getElementsByClassName("product")[2].style.display ;
+    if(display == "none"){
+        factorTwo = 0 ;
+    }
+    document.getElementsByClassName("factor")[2].innerHTML = factorOne + factorTwo ;
+    }else{
+        var factorOne = document.getElementsByClassName("factor")[0].innerHTML ;
+        var factorTwo = document.getElementsByClassName("factor")[1].innerHTML ;
+        factorOne = parseInt(factorOne) ;
+        factorTwo = 0 ;
+        document.getElementsByClassName("factor")[2].innerHTML = factorOne + factorTwo ;
+    }
+}
+
+
+
 
 delButtonArray.forEach((el,index) => {
     el.addEventListener("click" , () => {
         if(index == 0){
+            editCost(0,0) ;
             length-- ;
             showNumber() ;
             firstContain = parseInt(firstContain-180) ;
@@ -249,6 +280,7 @@ delButtonArray.forEach((el,index) => {
         }
 
         if(index == 1){
+            editCost(1,1) ;
             length-- ;
             showNumber() ;
             firstContain = parseInt(firstContain-180) ;
@@ -265,6 +297,7 @@ delButtonArray.forEach((el,index) => {
         }
 
         if(index == 2){
+            editCost(2,2) ;
             length-- ;
             showNumber();
             secondContain = parseInt(secondContain-180) ;
