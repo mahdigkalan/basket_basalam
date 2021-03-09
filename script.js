@@ -373,13 +373,12 @@ function showProduct(){
         template.content.querySelector(".add-button").firstElementChild.setAttribute("src",dataArrays[i].addButtonImage) ;
         template.content.querySelector(".less-button").firstElementChild.setAttribute("src",dataArrays[i].lessButtonImage) ;
         template.content.querySelector("input").setAttribute("value",dataArrays[i].firstValue) ;
+        template.content.querySelector(".add-button").addEventListener("click",function(){
+            console.log("Hello World !");
+        })
+
         let clon = template.content.cloneNode(true);
         document.querySelector(".produnt-list").appendChild(clon);
-
-        
-        // template.content.querySelector(".add-button").addEventListener("click", ()=>{
-        //     console.log("Hello World !");
-        // });
     }
 };
 
