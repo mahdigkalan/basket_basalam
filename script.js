@@ -133,6 +133,8 @@ buttonArray.forEach((el,index) => {
     })
     el.addEventListener("mousedown", () => {
         set = setInterval(function addPerSecond(){
+            plus++ ;
+            console.log(plus);
             if (index == 0){
                 sum1++ ;
                 value.value = sum1 ;
@@ -145,7 +147,7 @@ buttonArray.forEach((el,index) => {
                 sum3++ ;
                 value2.value = sum3 ;
             }
-        },100)
+        },time())
 
         
 
@@ -155,7 +157,7 @@ buttonArray.forEach((el,index) => {
         clearInterval(set) ;
     })
 });
-
+var plus = 0 ;
 buttonLessArray.forEach((el,index) => {
     el.addEventListener("click", () => {
         if (index == 0){
@@ -179,8 +181,11 @@ buttonLessArray.forEach((el,index) => {
 
     })
 
+    
     el.addEventListener("mousedown", ()=>{
         set2 = setInterval(function addPerSecond(){
+            plus++ ;
+            console.log(plus);
             if (index == 0){
                 if(sum1  > 1){sum1-- ;
                 value.value = sum1 ;}
@@ -193,7 +198,7 @@ buttonLessArray.forEach((el,index) => {
                 if(sum3  > 1){sum3-- ;
                 value2.value = sum3 ;}
             }
-        },100)
+        },time())
     })
 
     el.addEventListener("mouseup", ()=>{
@@ -201,6 +206,17 @@ buttonLessArray.forEach((el,index) => {
     })
 });
 
+
+
+function time(){
+    if(plus < 25){
+        return 100 ;
+    }else if(plus < 50){
+        return 75 ;
+    }else{
+        return 50 ;
+    }
+}
 
 var delButton = document.querySelectorAll(".delButton") ;
 var delButtonArray = Array.prototype.slice.call(delButton) ; 
