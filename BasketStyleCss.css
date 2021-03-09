@@ -14,6 +14,7 @@ body{
     font-family: IRANSansWeb;
     display: flex;
     justify-content: center;
+    background: #eeeeee;
 }
 .flex_row{
     display: flex;
@@ -113,11 +114,19 @@ input{
 .container-second{
     width: 100%;
     height: 380px;
-    border-bottom: solid 5px #E5E5E5;
 }
 .container-third{
     width: 100%;
     height: 90px;
+    position: fixed;
+    bottom: 0;
+    width: 360px;
+    background: white;
+}
+.space{
+    width: 100%;
+    height: 200px;
+    background: #EEEEEE;
 }
 .container-header{
     width: 100%;
@@ -405,6 +414,9 @@ button{
 }
 .saleCode{
     cursor: pointer;
+}
+.allProject{
+    background: white;
 }
 @media screen and (max-width: 320px) {
     .allProject{

@@ -375,6 +375,11 @@ function showProduct(){
         template.content.querySelector("input").setAttribute("value",dataArrays[i].firstValue) ;
         let clon = template.content.cloneNode(true);
         document.querySelector(".produnt-list").appendChild(clon);
+
+        
+        // template.content.querySelector(".add-button").addEventListener("click", ()=>{
+        //     console.log("Hello World !");
+        // });
     }
 };
 
