@@ -346,19 +346,11 @@ const dataArrays = [
     finalCost : 750000,
     linedCost : 850000,
     productImage : "image/image 1.png",
-    addButtonImage : "image/addVector.png",
-    lessButtonImage : "image/lowVector.png",
-    delButtonImage : "image/delVector.png",
-    constantSentence : "ذخیره در لیست بعدی",
     firstValue : 3},
     {name : "کالباس پسته",
     finalCost : 150000,
     linedCost : 350000,
     productImage : "image/image 2.png",
-    addButtonImage :"image/addVector.png",
-    lessButtonImage : "image/lowVector.png",
-    delButtonImage : "image/delVector.png",
-    constantSentence : "ذخیره در لیست بعدی",
     firstValue : 1},
 ];
 
@@ -369,9 +361,6 @@ for(let i = 0 ;i < dataArrays.length ; i++){
     template.content.querySelector(".product-name").firstElementChild.innerText = dataArrays[i].name ;
     template.content.querySelector(".line-cost").firstElementChild.innerText = dataArrays[i].linedCost ;
     template.content.querySelector(".pCost").innerText = dataArrays[i].finalCost ;
-    template.content.querySelector(".saveInNext").firstElementChild.innerText = dataArrays[i].constantSentence ;
-    template.content.querySelector(".add-button").firstElementChild.setAttribute("src",dataArrays[i].addButtonImage) ;
-    template.content.querySelector(".less-button").firstElementChild.setAttribute("src",dataArrays[i].lessButtonImage) ;
     template.content.querySelector("input").setAttribute("value",dataArrays[i].firstValue) ;
     template.content.querySelector(".add-button").setAttribute("onclick","showAdd("+i+")") ;
     template.content.querySelector(".add-button").setAttribute("onmousedown","showAddSpeed("+i+")") ;
