@@ -364,27 +364,42 @@ const dataArrays = [
 
 
 let template = document.getElementsByTagName("template")[0] ;
-function showProduct(){
-    for(let i = 0 ;i < dataArrays.length ; i++){
-        template.content.querySelector("img").setAttribute("src", dataArrays[i].productImage);
-        template.content.querySelector(".product-name").firstElementChild.innerText = dataArrays[i].name ;
-        template.content.querySelector(".line-cost").firstElementChild.innerText = dataArrays[i].linedCost ;
-        template.content.querySelector(".pCost").innerText = dataArrays[i].finalCost ;
-        template.content.querySelector(".saveInNext").firstElementChild.innerText = dataArrays[i].constantSentence ;
-        template.content.querySelector(".add-button").firstElementChild.setAttribute("src",dataArrays[i].addButtonImage) ;
-        template.content.querySelector(".less-button").firstElementChild.setAttribute("src",dataArrays[i].lessButtonImage) ;
-        template.content.querySelector("input").setAttribute("value",dataArrays[i].firstValue) ;
-        let value = template.content.querySelector("input").value ;
-        template.content.querySelector(".add-button").setAttribute("onclick","show("+value+","+i+")") ;
-        let clon = template.content.cloneNode(true);
-        document.querySelector(".produnt-list").appendChild(clon);
-    }
-};
-function show(v,i){
-    v++ ;
-    dataArrays[i].firstValue = v ;
-    console.log(dataArrays[i].firstValue) ;
+for(let i = 0 ;i < dataArrays.length ; i++){
+    template.content.querySelector("img").setAttribute("src", dataArrays[i].productImage);
+    template.content.querySelector(".product-name").firstElementChild.innerText = dataArrays[i].name ;
+    template.content.querySelector(".line-cost").firstElementChild.innerText = dataArrays[i].linedCost ;
+    template.content.querySelector(".pCost").innerText = dataArrays[i].finalCost ;
+    template.content.querySelector(".saveInNext").firstElementChild.innerText = dataArrays[i].constantSentence ;
+    template.content.querySelector(".add-button").firstElementChild.setAttribute("src",dataArrays[i].addButtonImage) ;
+    template.content.querySelector(".less-button").firstElementChild.setAttribute("src",dataArrays[i].lessButtonImage) ;
     template.content.querySelector("input").setAttribute("value",dataArrays[i].firstValue) ;
+    template.content.querySelector(".add-button").setAttribute("onclick","showAdd("+i+")") ;
+    template.content.querySelector(".add-button").setAttribute("onmousedown","showAddSpeed("+i+")") ;
+    template.content.querySelector(".add-button").setAttribute("onmouseup","showAddSpeedup()") ;
+    template.content.querySelector(".less-button").setAttribute("onclick","showLess("+i+")") ;
+    let clon = template.content.cloneNode(true);
+    document.querySelector(".produnt-list").appendChild(clon);
+};
+
+function showAdd(i){
+    let tem = document.querySelectorAll(".inp")[i].getAttribute("value") ;
+    tem++ ;
+    document.querySelectorAll(".inp")[i].setAttribute("value",tem) ;
+}
+function showLess(i){
+    let tem = document.querySelectorAll(".inp")[i].getAttribute("value") ;
+    if(tem > 1){
+        tem-- ;
+    document.querySelectorAll(".inp")[i].setAttribute("value",tem) ;
+    }
 }
 
-showProduct();
+function showAddSpeed(i){
+    let turn = i  ;
+    setTimeout(function () {
+        let tem = document.querySelectorAll(".inp")[turn].getAttribute("value") ;
+        tem++ ;
+        document.querySelectorAll(".inp")[turn].setAttribute("value",tem) ;
+        showAddSpeed(i) ; 
+    },200)
+} ;
