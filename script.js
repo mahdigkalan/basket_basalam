@@ -377,6 +377,8 @@ for(let i = 0 ;i < dataArrays.length ; i++){
     template.content.querySelector(".add-button").setAttribute("onmousedown","showAddSpeed("+i+")") ;
     template.content.querySelector(".add-button").setAttribute("onmouseup","showAddSpeedup()") ;
     template.content.querySelector(".less-button").setAttribute("onclick","showLess("+i+")") ;
+    template.content.querySelector(".less-button").setAttribute("onmousedown","showLessSpeed("+i+")") ;
+    template.content.querySelector(".less-button").setAttribute("onmouseup","showLessSpeedup()") ;
     let clon = template.content.cloneNode(true);
     document.querySelector(".produnt-list").appendChild(clon);
 };
@@ -393,13 +395,33 @@ function showLess(i){
     document.querySelectorAll(".inp")[i].setAttribute("value",tem) ;
     }
 }
-
+let setting ;
 function showAddSpeed(i){
     let turn = i  ;
-    setTimeout(function () {
+    setting = setTimeout(function () {
         let tem = document.querySelectorAll(".inp")[turn].getAttribute("value") ;
         tem++ ;
         document.querySelectorAll(".inp")[turn].setAttribute("value",tem) ;
         showAddSpeed(i) ; 
-    },200)
+    },time())
+};
+function showAddSpeedup() { 
+    clearInterval(setting) ;
+} ;
+function time() {
+    return 200 ;
+}
+
+let set ;
+function showLessSpeed(i){
+    let turn = i  ;
+    set = setTimeout(function () {
+        let temm = document.querySelectorAll(".inp")[turn].getAttribute("value") ;
+        temm-- ;
+        document.querySelectorAll(".inp")[turn].setAttribute("value",temm) ;
+        showLessSpeed(i) ; 
+    },time())
+};
+function showLessSpeedup() { 
+    clearInterval(set) ;
 } ;
