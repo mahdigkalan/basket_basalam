@@ -362,9 +362,10 @@ const dataArrays = [
     firstValue : 1},
 ];
 
+
+let template = document.getElementsByTagName("template")[0] ;
 function showProduct(){
     for(let i = 0 ;i < dataArrays.length ; i++){
-        let template = document.getElementsByTagName("template")[0] ;
         template.content.querySelector("img").setAttribute("src", dataArrays[i].productImage);
         template.content.querySelector(".product-name").firstElementChild.innerText = dataArrays[i].name ;
         template.content.querySelector(".line-cost").firstElementChild.innerText = dataArrays[i].linedCost ;
@@ -373,13 +374,17 @@ function showProduct(){
         template.content.querySelector(".add-button").firstElementChild.setAttribute("src",dataArrays[i].addButtonImage) ;
         template.content.querySelector(".less-button").firstElementChild.setAttribute("src",dataArrays[i].lessButtonImage) ;
         template.content.querySelector("input").setAttribute("value",dataArrays[i].firstValue) ;
-        template.content.querySelector(".add-button").addEventListener("click",function(){
-            console.log("Hello World !");
-        })
-
+        let value = template.content.querySelector("input").value ;
+        template.content.querySelector(".add-button").setAttribute("onclick","show("+value+","+i+")") ;
         let clon = template.content.cloneNode(true);
         document.querySelector(".produnt-list").appendChild(clon);
     }
 };
+function show(v,i){
+    v++ ;
+    dataArrays[i].firstValue = v ;
+    console.log(dataArrays[i].firstValue) ;
+    template.content.querySelector("input").setAttribute("value",dataArrays[i].firstValue) ;
+}
 
 showProduct();
