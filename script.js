@@ -88,7 +88,7 @@
 // function findCost(num,count){
 //     var constC = parseInt(costArr[num].firstElementChild.innerHTML) ;
 //     var final = constC * count ;
-    
+
 //     if(num == 0){
 //         costs.splice(0,1,final)
 //     }
@@ -149,7 +149,7 @@
 //             }
 //         },time())
 
-        
+
 
 //     })
 
@@ -181,7 +181,7 @@
 
 //     })
 
-    
+
 //     el.addEventListener("mousedown", ()=>{
 //         set2 = setInterval(function addPerSecond(){
 //             plus++ ;
@@ -319,7 +319,7 @@
 //             secondContain = parseInt(secondContain-180) ;
 //             productThree.style.display = "none" ;
 
-            
+
 //             if(secondContain == 200){
 
 //                 secondProduct.style.display = "none" ;
@@ -342,75 +342,91 @@
 
 
 const dataArrays = [
-    {name : "سوسیس آلمانی پنیری",
-    finalCost : 750000,
-    linedCost : 850000,
-    productImage : "image/image 1.png",
-    firstValue : 3},
-    {name : "کالباس پسته",
-    finalCost : 150000,
-    linedCost : 350000,
-    productImage : "image/image 2.png",
-    firstValue : 1},
+    {
+        name: "سوسیس آلمانی پنیری",
+        finalCost: 75000,
+        linedCost: 85000,
+        productImage: "image/image 1.png",
+        firstValue: 3
+    },
+    {
+        name: "کالباس پسته",
+        finalCost: 15000,
+        linedCost: 35000,
+        productImage: "image/image 2.png",
+        firstValue: 1
+    },
 ];
 
-
-let template = document.getElementsByTagName("template")[0] ;
-for(let i = 0 ;i < dataArrays.length ; i++){
+let template = document.getElementsByTagName("template")[0];
+for (let i = 0; i < dataArrays.length; i++) {
     template.content.querySelector("img").setAttribute("src", dataArrays[i].productImage);
-    template.content.querySelector(".product-name").firstElementChild.innerText = dataArrays[i].name ;
-    template.content.querySelector(".line-cost").firstElementChild.innerText = dataArrays[i].linedCost ;
-    template.content.querySelector(".pCost").innerText = dataArrays[i].finalCost ;
-    template.content.querySelector("input").setAttribute("value",dataArrays[i].firstValue) ;
-    template.content.querySelector(".add-button").setAttribute("onclick","showAdd("+i+")") ;
-    template.content.querySelector(".add-button").setAttribute("onmousedown","showAddSpeed("+i+")") ;
-    template.content.querySelector(".add-button").setAttribute("onmouseup","showAddSpeedup()") ;
-    template.content.querySelector(".less-button").setAttribute("onclick","showLess("+i+")") ;
-    template.content.querySelector(".less-button").setAttribute("onmousedown","showLessSpeed("+i+")") ;
-    template.content.querySelector(".less-button").setAttribute("onmouseup","showLessSpeedup()") ;
+    template.content.querySelector(".product-name").firstElementChild.innerText = dataArrays[i].name;
+    template.content.querySelector(".line-cost").firstElementChild.innerText = dataArrays[i].linedCost;
+    template.content.querySelector(".pCost").innerText = dataArrays[i].finalCost;
+    template.content.querySelector("input").setAttribute("value", dataArrays[i].firstValue);
+    template.content.querySelector(".add-button").setAttribute("onclick", "showAdd(" + i + ")");
+    template.content.querySelector(".add-button").setAttribute("onmousedown", "showAddSpeed(" + i + ")");
+    template.content.querySelector(".add-button").setAttribute("onmouseup", "showAddSpeedup()");
+    template.content.querySelector(".less-button").setAttribute("onclick", "showLess(" + i + ")");
+    template.content.querySelector(".less-button").setAttribute("onmousedown", "showLessSpeed(" + i + ")");
+    template.content.querySelector(".less-button").setAttribute("onmouseup", "showLessSpeedup()");
     let clon = template.content.cloneNode(true);
     document.querySelector(".produnt-list").appendChild(clon);
 };
-
-function showAdd(i){
-    let tem = document.querySelectorAll(".inp")[i].getAttribute("value") ;
-    tem++ ;
-    document.querySelectorAll(".inp")[i].setAttribute("value",tem) ;
-}
-function showLess(i){
-    let tem = document.querySelectorAll(".inp")[i].getAttribute("value") ;
-    if(tem > 1){
-        tem-- ;
-    document.querySelectorAll(".inp")[i].setAttribute("value",tem) ;
+function countCost() {
+    for (let i = 0; i < dataArrays.length; i++) {
+        let num = +template.content.querySelector("input").value;
+        let cost = +dataArrays[i].finalCost;
+        let final = num * cost;
+        let text = +document.querySelector(".factor").innerText;
+        text = 0;
+        text += final;
     }
 }
-let setting ;
-function showAddSpeed(i){
-    let turn = i  ;
+function showAdd(i) {
+    let tem = document.querySelectorAll(".inp")[i].getAttribute("value");
+    tem++;
+    document.querySelectorAll(".inp")[i].setAttribute("value", tem);
+    countCost();
+}
+function showLess(i) {
+    let tem = document.querySelectorAll(".inp")[i].getAttribute("value");
+    if (tem > 1) {
+        tem--;
+        document.querySelectorAll(".inp")[i].setAttribute("value", tem);
+    }
+    countCost();
+}
+let setting;
+function showAddSpeed(i) {
+    let turn = i;
     setting = setTimeout(function () {
-        let tem = document.querySelectorAll(".inp")[turn].getAttribute("value") ;
-        tem++ ;
-        document.querySelectorAll(".inp")[turn].setAttribute("value",tem) ;
-        showAddSpeed(i) ; 
-    },time())
+        let tem = document.querySelectorAll(".inp")[turn].getAttribute("value");
+        tem++;
+        document.querySelectorAll(".inp")[turn].setAttribute("value", tem);
+        showAddSpeed(i);
+    countCost();
+    }, time())
 };
-function showAddSpeedup() { 
-    clearInterval(setting) ;
-} ;
+function showAddSpeedup() {
+    clearInterval(setting);
+};
 function time() {
-    return 200 ;
+    return 200;
 }
 
-let set ;
-function showLessSpeed(i){
-    let turn = i  ;
+let set;
+function showLessSpeed(i) {
+    let turn = i;
     set = setTimeout(function () {
-        let temm = document.querySelectorAll(".inp")[turn].getAttribute("value") ;
-        temm-- ;
-        document.querySelectorAll(".inp")[turn].setAttribute("value",temm) ;
-        showLessSpeed(i) ; 
-    },time())
+        let temm = document.querySelectorAll(".inp")[turn].getAttribute("value");
+        temm--;
+        document.querySelectorAll(".inp")[turn].setAttribute("value", temm);
+        showLessSpeed(i);
+    countCost();
+    }, time())
 };
-function showLessSpeedup() { 
-    clearInterval(set) ;
-} ;
+function showLessSpeedup() {
+    clearInterval(set);
+};
