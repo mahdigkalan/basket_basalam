@@ -388,7 +388,6 @@ function showAdd(i) {
     let tem = document.querySelectorAll(".inp")[i].getAttribute("value");
     tem++;
     document.querySelectorAll(".inp")[i].setAttribute("value", tem);
-    countCost();
 }
 function showLess(i) {
     let tem = document.querySelectorAll(".inp")[i].getAttribute("value");
@@ -396,7 +395,6 @@ function showLess(i) {
         tem--;
         document.querySelectorAll(".inp")[i].setAttribute("value", tem);
     }
-    countCost();
 }
 let setting;
 function showAddSpeed(i) {
@@ -406,7 +404,6 @@ function showAddSpeed(i) {
         tem++;
         document.querySelectorAll(".inp")[turn].setAttribute("value", tem);
         showAddSpeed(i);
-    countCost();
     }, time())
 };
 function showAddSpeedup() {
@@ -424,7 +421,6 @@ function showLessSpeed(i) {
         temm--;
         document.querySelectorAll(".inp")[turn].setAttribute("value", temm);
         showLessSpeed(i);
-    countCost();
     }, time())
 };
 function showLessSpeedup() {
