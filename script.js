@@ -377,6 +377,7 @@ for (let i = 0; i < dataArrays.length; i++) {
 function countCost() {
     for (let i = 0; i < dataArrays.length; i++) {
         let num = +template.content.querySelector("input").value;
+        console.log(num);
         let cost = +dataArrays[i].finalCost;
         let final = num * cost;
         let text = +document.querySelector(".factor").innerText;
