@@ -374,21 +374,25 @@ for (let i = 0; i < dataArrays.length; i++) {
     let clon = template.content.cloneNode(true);
     document.querySelector(".produnt-list").appendChild(clon);
 };
+
 function countCost() {
+    let finalCost = 0;
+    let final = 0;
     for (let i = 0; i < dataArrays.length; i++) {
-        let num = +template.content.querySelector("input").value;
-        console.log(num);
+        let num = +document.querySelectorAll(".inp")[i].value;
         let cost = +dataArrays[i].finalCost;
-        let final = num * cost;
-        let text = +document.querySelector(".factor").innerText;
-        text = 0;
-        text += final;
+        final = num * cost;
+        finalCost += final;
+        document.querySelector(".factor").innerText = finalCost;
     }
 }
+countCost();
 function showAdd(i) {
     let tem = document.querySelectorAll(".inp")[i].getAttribute("value");
     tem++;
     document.querySelectorAll(".inp")[i].setAttribute("value", tem);
+    countCost();
+
 }
 function showLess(i) {
     let tem = document.querySelectorAll(".inp")[i].getAttribute("value");
@@ -396,6 +400,8 @@ function showLess(i) {
         tem--;
         document.querySelectorAll(".inp")[i].setAttribute("value", tem);
     }
+    countCost();
+
 }
 let setting;
 function showAddSpeed(i) {
@@ -405,6 +411,7 @@ function showAddSpeed(i) {
         tem++;
         document.querySelectorAll(".inp")[turn].setAttribute("value", tem);
         showAddSpeed(i);
+        countCost();
     }, time())
 };
 function showAddSpeedup() {
@@ -422,6 +429,8 @@ function showLessSpeed(i) {
         temm--;
         document.querySelectorAll(".inp")[turn].setAttribute("value", temm);
         showLessSpeed(i);
+        countCost();
+
     }, time())
 };
 function showLessSpeedup() {
