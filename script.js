@@ -385,6 +385,7 @@ function countCost() {
         finalCost += final;
         document.querySelector(".factor").innerText = finalCost;
     }
+    document.querySelector(".small-badge").innerText = document.getElementsByClassName("product").length ;
 }
 countCost();
 function showAdd(i) {
