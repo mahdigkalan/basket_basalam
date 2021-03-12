@@ -359,7 +359,7 @@ const dataArrays = [
 ];
 
 let template = document.getElementsByTagName("template")[0];
-for (let i = 0; i < dataArrays.length; i++) {
+for (let i = 0; i < dataArrays.length ; i++) {
     template.content.querySelector("img").setAttribute("src", dataArrays[i].productImage);
     template.content.querySelector(".product-name").firstElementChild.innerText = dataArrays[i].name;
     template.content.querySelector(".line-cost").firstElementChild.innerText = dataArrays[i].linedCost;
@@ -376,15 +376,10 @@ for (let i = 0; i < dataArrays.length; i++) {
     document.querySelector(".produnt-list").appendChild(clon);
 };
 
-function del(i) {
-    let tem = document.querySelectorAll(".product")[i] ;
-    console.log(tem);
-    tem.remove() ;
-}
 function countCost() {
     let finalCost = 0;
     let final = 0;
-    for (let i = 0; i < dataArrays.length; i++) {
+    for (let i = 0; i < dataArrays.length ; i++) {
         let num = +document.querySelectorAll(".inp")[i].value;
         let cost = +dataArrays[i].finalCost;
         final = num * cost;
@@ -394,6 +389,14 @@ function countCost() {
     document.querySelector(".small-badge").innerText = document.getElementsByClassName("product").length ;
 }
 countCost();
+function del(i) {
+    let tem = document.querySelectorAll(".product")[i] ;
+    console.log(i);
+    tem.remove() ;
+    dataArrays.splice(i,1) ;
+    console.log(dataArrays) ;
+    countCost() ;
+} ;
 function showAdd(i) {
     let tem = document.querySelectorAll(".inp")[i].getAttribute("value");
     tem++;
