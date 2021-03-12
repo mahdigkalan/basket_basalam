@@ -369,12 +369,18 @@ for (let i = 0; i < dataArrays.length; i++) {
     template.content.querySelector(".add-button").setAttribute("onmousedown", "showAddSpeed(" + i + ")");
     template.content.querySelector(".add-button").setAttribute("onmouseup", "showAddSpeedup()");
     template.content.querySelector(".less-button").setAttribute("onclick", "showLess(" + i + ")");
+    template.content.querySelector(".delButton").setAttribute("onclick", "del(" + i + ")");
     template.content.querySelector(".less-button").setAttribute("onmousedown", "showLessSpeed(" + i + ")");
     template.content.querySelector(".less-button").setAttribute("onmouseup", "showLessSpeedup()");
     let clon = template.content.cloneNode(true);
     document.querySelector(".produnt-list").appendChild(clon);
 };
 
+function del(i) {
+    let tem = document.querySelectorAll(".product")[i] ;
+    console.log(tem);
+    tem.remove() ;
+}
 function countCost() {
     let finalCost = 0;
     let final = 0;
