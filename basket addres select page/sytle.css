@@ -101,6 +101,8 @@ body{
     font-size: 12px;
     font-weight: 400;
     border: 1px solid #9D9D9D;
+    direction: rtl;
+    padding: 0 10px 0 0;
 }
 .select-addres-header{
    height: 65px; 
@@ -127,7 +129,7 @@ button{
 .rightside-div{
     width: 50%;
 }
-.rightside-div > button{
+a > button{
     height: 40px;
     width: 40px;
     border-radius: 100px;
@@ -142,7 +144,9 @@ button{
 }
 .rightside-div > p {
     margin: 16px 10px 0 0;
-
+}
+button, input{
+    outline: none;
 }
 .address{
    height: 130px;
